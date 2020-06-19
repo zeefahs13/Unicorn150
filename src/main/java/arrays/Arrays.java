@@ -1,48 +1,49 @@
 package arrays;
 
-public class Arrays{
+public class Arrays {
 
+	/*
+	 * One cannot compute the sum of elements of an array without visiting them if
+	 * array elements are not known in before hand.
+	 * 
+	 * If the array elements are known in before hand, we can compute in O(1) time
+	 * and O(1) space complexity
+	 */
 
-    /*
-        One cannot compute the sum of elements of an array without visiting them if array elements are 
-        not known in before hand.
+	// O(n) solution
+	protected int sumOfElements(int[] arr) {
+		int sum = 0;
+		for (int i=1;i<arr.length;i++) {
 
-        If the array elements are known in before hand, we can compute in O(1) time and O(1) space complexity
-    */
+			sum = sum + i;
 
+		}
 
-    //O(n) solution
-protected long sumOfElements(int[] arr){
-        int sum=0;
-        for(int i:arr){
+		return sum;
 
-            sum=sum+i;
+	}
 
-        }
+	protected int sumOfnNaturalNumbers(int[] arr) {
+		int sum = 0;
 
-        return (long)sum;
+		int n = arr.length;
 
-}
+		sum = (n * (n - 1) / 2);
 
+		return sum;
+	}
 
+	public static void main(String[] args) {
+		
+		int[] arr=new int[] {1,2,3,4,5,6,7,8,9,10};
+		
+		Arrays array = new Arrays();
+		int sum=array.sumOfElements(arr);
+		System.out.println("sum normal:"+sum);
+		long sum1=array.sumOfnNaturalNumbers(arr);
+		System.out.println("sum :"+sum1);
+		
 
-protected long sumOfnNaturalNumbers(int[] arr){
-    int sum=0;
-
-    int n=arr.length;
-
-    sum=(n*(n-1)/2);
-
-    return (long)sum;
-}
-
-
-
-
-
-
-
-
-
+	}
 
 }
